@@ -58,21 +58,37 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 // Begin writing your code below (you can remove the examples shown)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+//Make the fill white and a black border
+canvas.fillColor = .white
+canvas.borderColor = .black
+canvas.drawShapesWithBorders = true
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+// Draw Pandas head
+canvas.drawEllipse(at: Point(x: 0, y: 0), width: 100, height: 100)
 
-// Go back to origin
-p.goToOrigin()
+//Draw right eye
+canvas.drawEllipse(at: Point(x: 20, y: 15), width: 20, height: 30)
+//Draw left eye
+canvas.drawEllipse(at: Point(x: -20, y: 15), width: 20, height: 30)
 
-// Change the pen color
-p.penColor = .red
+//Change fill color
+canvas.fillColor = .black
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+//Right pupil
+canvas.drawEllipse(at: Point(x: 20, y: 5), width:10, height: 10)
 
+//Left Pupil
+canvas.drawEllipse(at: Point(x: -20, y: 5), width: 10, height: 10)
+
+//Draw nose
+canvas.drawEllipse(at: Point(x: 0, y: -10), width: 15, height: 15)
+
+//Determine pen color
+canvas.lineColor = .black
+
+//Draw smile
+canvas.drawLine(from: Point(x: -10, y:-25), to: Point(x: 10, y: -25))
+canvas.drawCurve(from: Point(x: -10, y:-25),to:Point(x: 10, y: -25), control1:Point(x: -4, y: -35) , control2: Point (x: 4, y: -35))
 /*:
  ## Show the Live View
  Don't see any results?
