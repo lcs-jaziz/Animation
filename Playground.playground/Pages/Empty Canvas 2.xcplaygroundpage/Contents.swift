@@ -57,21 +57,43 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  */
 
 // Begin writing your code below (you can remove the examples shown)
+//Main Frame
+p.goto(dx: -280, dy: 200)
+p.drawTo(dx: 0, dy: -400)
+p.drawTo(dx: 560, dy: 0)
+p.drawTo(dx: 0, dy: 400)
+p.drawTo(dx: -560, dy: 0)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+// Inclined Lines
+p.goto(dx: 480, dy: -320)
+p.drawTo(dx: 40, dy: -80)
+p.drawTo(dx: -40, dy: 80)
+p.drawTo(dx: 80, dy: 40)
+p.drawTo(dx: -80, dy: -40)
+p.drawTo(dx: -40, dy: -80)
+p.drawTo(dx: 40, dy: 80)
+p.drawTo(dx: -280, dy: -80)
+p.drawTo(dx: 280, dy: 80)
+p.drawTo(dx: -480, dy: 320)
+p.drawTo(dx: 480, dy: -320)
+p.drawTo(dx: -220, dy: 320)
+p.drawTo(dx: 220, dy: -320)
+p.drawTo(dx: -20, dy: 320)
+p.drawTo(dx: 20, dy: -320)
+p.drawTo(dx: 80, dy: 220)
+p.goto(dx: -420, dy: 100)
+p.drawTo(dx: 0, dy: -400)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+// Fill Big Rectangle
+p.beginFill()
+p.drawTo(dx: -140, dy: 0)
+p.drawTo(dx: 0, dy: 400)
+p.drawTo(dx: 140, dy: -93)
+    p.drawTo(dx: 0, dy: -300)
+p.endFill()
 
-// Go back to origin
-p.goToOrigin()
 
-// Change the pen color
-p.penColor = .red
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
 
 /*:
  ## Show the Live View
