@@ -141,6 +141,105 @@ p.drawTo(dx: 25, dy: 6)
 p.drawTo(dx: 0, dy: 170)
 p.drawTo(dx: -25, dy: 16)
 p.endFill()
+
+p.goto(dx: 35, dy: -26)
+p.beginFill()
+p.drawTo(dx: 0, dy: -157)
+p.drawTo(dx: 22, dy: 8)
+p.drawTo(dx: 0, dy: 136)
+p.drawTo(dx: -22, dy: 16)
+p.endFill()
+
+p.goto(dx: 33, dy: -24)
+p.beginFill()
+p.drawTo(dx: 0, dy: -127)
+p.drawTo(dx: 17, dy: 6)
+p.drawTo(dx: 0, dy: 111)
+p.drawTo(dx: -17, dy: 12)
+p.endFill()
+
+p.goto(dx: 25, dy: -18)
+p.beginFill()
+p.drawTo(dx: 0, dy: -103)
+p.drawTo(dx: 11, dy: 3)
+p.drawTo(dx: 0, dy: 94)
+p.drawTo(dx: -11, dy: 7)
+p.endFill()
+
+p.goto(dx: 20, dy: -16)
+p.beginFill()
+p.drawTo(dx: 0, dy: -83)
+p.drawTo(dx: 11, dy: 3)
+p.drawTo(dx: 0, dy: 76)
+p.drawTo(dx: -11, dy: 7)
+p.endFill()
+
+p.goto(dx: 20, dy: -14)
+p.beginFill()
+p.drawTo(dx: 0, dy: -65)
+p.drawTo(dx: 12, dy: 3)
+p.drawTo(dx: 0, dy: 55)
+p.endFill()
+
+p.goto(dx: 7, dy: -7)
+p.beginFill()
+p.drawTo(dx: 0, dy: -44)
+p.drawTo(dx: 8, dy: 3)
+p.drawTo(dx: 0, dy: 36)
+p.endFill()
+
+p.goto(dx: 7, dy: -5)
+p.beginFill()
+p.drawTo(dx: 0, dy: -31)
+p.drawTo(dx: 34, dy: 9)
+p.endFill()
+
+
+//Triangle 1
+p.beginFill()
+p.drawTo(dx: -20, dy: -42)
+p.drawTo(dx: 42, dy: 0)
+p.drawTo(dx: -20, dy: 40)
+p.endFill()
+
+p.goto(dx: 28, dy: -54)
+p.beginFill()
+p.drawTo(dx: 10, dy: -23)
+p.drawTo(dx: -77, dy: 0)
+p.drawTo(dx: 12, dy: 26)
+p.drawTo(dx: 51, dy: 0)
+p.endFill()
+
+
+//Triangle 2
+
+p.goto(dx: -3, dy: 14)
+p.beginFill()
+p.drawTo(dx: 20, dy: 0)
+p.drawTo(dx: 0, dy: 60)
+p.drawTo(dx: 30, dy: 14)
+p.drawTo(dx: 0, dy: -100)
+p.drawTo(dx: -37, dy: 0)
+p.endFill()
+
+// Triangle 8
+p.goto(dx: -68, dy: 0)
+p.beginFill()
+p.drawTo(dx: -18, dy: 0)
+p.drawTo(dx: 0, dy: 48)
+p.drawTo(dx: 15, dy: 5)
+p.drawTo(dx: 0, dy: -28)
+p.drawTo(dx: 15, dy: 0)
+p.endFill()
+
+p.goto(dx: -16, dy: -36)
+p.beginFill()
+p.drawTo(dx: -32, dy: 0)
+p.drawTo(dx: 0, dy: 53)
+p.drawTo(dx: -15, dy: -3)
+p.drawTo(dx: 0, dy: -52)
+p.drawTo(dx: 44, dy: 0)
+p.endFill()
 /*:
  ## Show the Live View
  Don't see any results?
