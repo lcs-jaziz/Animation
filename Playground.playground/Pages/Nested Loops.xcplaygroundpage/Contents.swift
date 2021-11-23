@@ -1,10 +1,10 @@
 //: [Previous](@previous) / [Next](@next)
 /*:
-## Canvas size
+ ## Canvas size
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
+let preferredWidth = 400
 let preferredHeight = 600
 /*:
  ## Required code
@@ -41,54 +41,71 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 /*:
  ## Add your code
  
  Beginning on line 61, you can add your own code.
-  
+ 
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
+ 
  */
 
-// Begin writing your code below (you can remove the examples shown)
 
-//Make the fill white and a black border
-canvas.fillColor = .white
-canvas.borderColor = .black
-canvas.drawShapesWithBorders = true
 
-// Draw Pandas head
-canvas.drawEllipse(at: Point(x: 0, y: 0), width: 100, height: 100)
+//Turn on high performance mode
+canvas.highPerformance = true
 
-//Draw right eye
-canvas.drawEllipse(at: Point(x: 20, y: 15), width: 20, height: 30)
-//Draw left eye
-canvas.drawEllipse(at: Point(x: -20, y: 15), width: 20, height: 30)
+for someValue in stride(from: 1,
+                        through: 600,
+                        by: 1){
+    
+    let currentColor = Color(hue: 0,
+                             saturation: 80,
+                             brightness: 0,
+                             alpha: 100)
+    canvas.lineColor = currentColor
+    
+    canvas.drawLine(from: Point (x: someValue, y: 1), to: Point (x: someValue, y: 600))
+    
+    
+}
 
-//Change fill color
-canvas.fillColor = .black
+for verticalPosition in stride(from: -50, through: 475, by: 50) {
+    
+    for horizontalPosition in stride(from: -50, through: 470, by: 50) {
+        
+        canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 47, height: 47)
+        
+        canvas.drawText(message: "(\(horizontalPosition), \(verticalPosition))",
+                        at: Point(x: horizontalPosition - 20,
+                                  y: verticalPosition),
+                        size: 9)
+        
+        if verticalPosition < 100
+        ,horizontalPosition < 40{
+            canvas.fillColor = Color(hue: 100,
+                                     saturation: 80,
+                                     brightness: 80,
+                                     alpha: 100)
+            
+        } else {
+            canvas.fillColor = .white
+            
+        }
+    }
+}
 
-//Right pupil
-canvas.drawEllipse(at: Point(x: 20, y: 5), width:10, height: 10)
+canvas.highPerformance = false
 
-//Left Pupil
-canvas.drawEllipse(at: Point(x: -20, y: 5), width: 10, height: 10)
 
-//Draw nose
-canvas.drawEllipse(at: Point(x: 0, y: -10), width: 15, height: 15)
 
-//Determine pen color
-canvas.lineColor = .black
 
-//Draw smile
-canvas.drawLine(from: Point(x: -10, y:-25), to: Point(x: 10, y: -25))
-canvas.drawCurve(from: Point(x: -10, y:-25),to:Point(x: 10, y: -25), control1:Point(x: -4, y: -35) , control2: Point (x: 4, y: -35))
+
 /*:
  ## Show the Live View
  Don't see any results?
@@ -96,7 +113,7 @@ canvas.drawCurve(from: Point(x: -10, y:-25),to:Point(x: 10, y: -25), control1:Po
  Remember to show the Live View (1 then 2):
  
  ![timeline](timeline.png "Timeline")
-
+ 
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  

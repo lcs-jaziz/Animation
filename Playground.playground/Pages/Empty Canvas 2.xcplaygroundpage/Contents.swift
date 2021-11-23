@@ -55,6 +55,7 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+canvas.highPerformance = true
 
 // Begin writing your code below (you can remove the examples shown)
 //Main Frame
@@ -313,6 +314,8 @@ p.drawTo(dx: -18, dy: 0)
 p.drawTo(dx:6 , dy: 16)
 p.drawTo(dx: 12, dy: 0)
 p.endFill()
+
+canvas.highPerformance = false
 
 /*:
  ## Show the Live View
