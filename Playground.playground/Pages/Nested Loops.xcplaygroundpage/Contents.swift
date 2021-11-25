@@ -138,6 +138,17 @@ canvas.drawText(message: "throwing muses", at: Point(x: 275, y: 435), size: 15, 
      //Text big dipper
 canvas.drawText(message: "big dipper", at: Point(x: 275, y: 420), size: 15, kerning: 0)
 
+canvas.textColor = .black
+
+//Text upper left
+canvas.drawText(message: "saturday", at: Point(x: 10, y: 555), size: 12, kerning: 0)
+canvas.drawText(message: "december 13 1986", at: Point(x: 10, y: 535), size: 12, kerning: 0)
+canvas.drawText(message: "9 pm over 21", at: Point(x: 10, y: 515), size: 12, kerning: 0)
+canvas.drawText(message: "at the rat", at: Point(x: 280, y: 552), size: 12, kerning: 0)
+canvas.drawText(message: "528 commonwealth", at: Point(x: 280, y: 532), size: 12, kerning: 0)
+canvas.drawText(message: "boston, mass.", at: Point(x: 280, y: 512), size: 12, kerning: 0)
+
+
 canvas.highPerformance = false
 
 
