@@ -58,8 +58,8 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 
 //Turn on high performance mode
-canvas.highPerformance = true
 
+canvas.highPerformance = true
 for someValue in stride(from: 1,
                         through: 600,
                         by: 1){
@@ -75,33 +75,70 @@ for someValue in stride(from: 1,
     
 }
 
-for verticalPosition in stride(from: -50, through: 475, by: 50) {
+for verticalPosition in stride(from: 0, through: 400, by: 40) {
     
-    for horizontalPosition in stride(from: -50, through: 470, by: 50) {
+    for horizontalPosition in stride(from:0, through: 400, by: 40) {
         
-        canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 47, height: 47)
-        
-        canvas.drawText(message: "(\(horizontalPosition), \(verticalPosition))",
-                        at: Point(x: horizontalPosition - 20,
-                                  y: verticalPosition),
-                        size: 9)
-        
-        if verticalPosition < 100
-        ,horizontalPosition < 40{
-            canvas.fillColor = Color(hue: 100,
-                                     saturation: 80,
-                                     brightness: 80,
-                                     alpha: 100)
+        if verticalPosition == 0 ||
+            horizontalPosition == 0 ||
+            verticalPosition == 400 ||
+            horizontalPosition == 400 ||
+            horizontalPosition + verticalPosition == 440 ||
+            horizontalPosition + verticalPosition == 480 ||
+            horizontalPosition + verticalPosition == 520 ||
+            horizontalPosition + verticalPosition == 560 ||
+            horizontalPosition + verticalPosition == 600 ||
+            horizontalPosition + verticalPosition == 640 ||
+            horizontalPosition + verticalPosition == 680 ||
+            horizontalPosition + verticalPosition == 720 {
             
-        } else {
-            canvas.fillColor = .white
+             
+            //Green
+            canvas.fillColor = Color(hue: 100, saturation: 80, brightness: 80, alpha: 100)
             
-        }
+    } else {
+        canvas.fillColor = .white
+        
     }
+    
+    canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 36, height: 36)
+    
+    canvas.drawText(message: "(\(horizontalPosition), \(verticalPosition))",
+                    at: Point(x: horizontalPosition - 20,
+                              y: verticalPosition),
+                    size: 9)
+    
+    
+}
 }
 
-canvas.highPerformance = false
+for mValue in stride(from: 1,
+                     through: 600,
+                     by: 1){
+    
+    let currentColor = Color(hue: 100,
+                             saturation: 80,
+                             brightness: 80,
+                             alpha: 100)
+    canvas.lineColor = currentColor
+    canvas.drawLine(from: Point (x: mValue, y: 400), to: Point (x: mValue, y: 600))
+    
+}
+         // Text Pixies
+ canvas.textColor = .black
+canvas.drawText(message: "pixies", at: Point(x: 15, y: 400), size: 70, kerning: 3)
 
+       // Text with
+canvas.textColor = .white
+canvas.drawText(message: "with", at: Point(x: 275, y: 450), size: 15, kerning: 0)
+
+      // Text throwing muses
+canvas.drawText(message: "throwing muses", at: Point(x: 275, y: 435), size: 15, kerning: 0)
+
+     //Text big dipper
+canvas.drawText(message: "big dipper", at: Point(x: 275, y: 420), size: 15, kerning: 0)
+
+canvas.highPerformance = false
 
 
 
