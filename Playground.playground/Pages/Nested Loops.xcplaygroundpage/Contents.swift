@@ -103,13 +103,6 @@ for verticalPosition in stride(from: 0, through: 400, by: 40) {
     
     canvas.drawEllipse(at: Point(x: horizontalPosition, y: verticalPosition), width: 36, height: 36)
     
-    canvas.drawText(message: "(\(horizontalPosition), \(verticalPosition))",
-                    at: Point(x: horizontalPosition - 20,
-                              y: verticalPosition),
-                    size: 9)
-    
-    
-}
 }
 
 for mValue in stride(from: 1,
@@ -123,6 +116,7 @@ for mValue in stride(from: 1,
     canvas.lineColor = currentColor
     canvas.drawLine(from: Point (x: mValue, y: 400), to: Point (x: mValue, y: 600))
     
+}
 }
          // Text Pixies
  canvas.textColor = .black
