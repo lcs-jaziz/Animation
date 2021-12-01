@@ -56,30 +56,68 @@ for someValue in stride(from: 1,
                         through: 600,
                         by: 1){
     
-    canvas.lineColor = .red
+    let currentcolor = Color(hue: 15, saturation: 81, brightness: 100, alpha: 100)
+    
+    canvas.lineColor = currentcolor
     
     canvas.drawLine(from: Point (x: someValue, y: 1), to: Point (x: someValue, y: 600))
 }
 
-// Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .white)
+//Draw Triangles
+for xPosition in stride(from: 0, through: 400, by: 44.44){
+    for yPosition in stride(from: 200, through: 600, by: 44.44){
+        canvas.fillColor = Color(hue: 82, saturation: 15, brightness: 86, alpha: 100)
+        
+        //Find out Position for Triangles
+        canvas.drawEllipse(at: Point(x: xPosition, y: yPosition ), width: 5, height: 5)
+        
+        var triangleVertices: [Point] = []
+        triangleVertices.append(Point(x: xPosition, y: yPosition ))
+        triangleVertices.append(Point(x: xPosition + 44.44, y: yPosition + 0))
+        triangleVertices.append(Point(x: xPosition + 44.44, y: yPosition + 44.44))
+        canvas.drawCustomShape(with: triangleVertices)
+        
+        if xPosition >= 200 ||
+            xPosition + yPosition == 400 {
+            canvas.fillColor = .yellow
+        } else {
+            canvas.fillColor = .white
+        }
+        
+    }
+}
+
+    //Text
+canvas.textColor = Color(hue: 82, saturation: 15, brightness: 86, alpha: 100)
+canvas.drawText(message: "talking heads", at:Point(x:30, y: 180), size: 30, kerning: 0)
+canvas.drawText(message: "friday,saturday,sunday", at: Point(x: 15, y: 15), size: 15, kerning: 0)
+canvas.drawText(message: "september 12,13,14, 1975", at: Point(x: 15, y: 5), size: 15, kerning: 0)
+canvas.drawText(message: "at cbgb and omfug", at: Point(x: 140, y: 15), size: 15, kerning: 0)
+canvas.drawText(message: "315 bowery, new york city", at: Point(x: 140, y: 10), size: 15, kerning: 0)
+canvas.drawText(message: "also appearing:", at: Point(x: 270, y: 15), size: 15, kerning: 0)
+canvas.drawText(message: "from brooklyn, the shirts", at: Point(x: 270, y: 10), size: 15, kerning: 0)
 
 
-canvas.highPerformance = false
-
-
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
- 
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
+    // Show a grid
+    canvas.drawAxes(withScale: true, by: 50, color: .black)
+    
+    
+    canvas.highPerformance = false
+    
+    
+    /*:
+     ## Show the Live View
+     Don't see any results?
+     
+     Remember to show the Live View (1 then 2):
+     
+     ![timeline](timeline.png "Timeline")
+     
+     ## Use source control
+     To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
+     
+     Please commit and push your work often.
+     
+     ![source_control](source-control.png "Source Control")
+     */
+        
