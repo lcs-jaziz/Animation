@@ -53,6 +53,28 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
  
  */
+// Add the ability to draw a tilted rectangle to the Canvas structure
+extension Canvas {
+    func drawTiltedRectangle(xPosition:Int, yPosition: Int) {
+        var rectangleVertices: [Point] = []
+        rectangleVertices.append(Point(x: xPosition+0,
+                                       y: yPosition+30)) //A
+        rectangleVertices.append(Point(x: xPosition+20,
+                                       y: yPosition+50)) //B
+        rectangleVertices.append(Point(x: xPosition+50,
+                                       y: yPosition+20)) //C
+        rectangleVertices.append(Point(x: xPosition+30,
+                                       y: yPosition+0)) //D
+        
+        canvas.drawCustomShape(with: rectangleVertices)
+        
+        
+        
+    }
+}
+
+
+
 //Custom shape with absoulte coordinates
 //1. Make a list of the vertices
 var triangleVertices: [Point] = [] //Emptylist point instances
@@ -71,22 +93,13 @@ for xPosition in stride(from: 0, through: 350, by: 50) {
         
         //Draw the tilted rectangle
         canvas.fillColor = .blue
-        var rectangleVertices: [Point] = []
-        rectangleVertices.append(Point(x: xPosition+0,
-                                       y: yPosition+30)) //A
-        rectangleVertices.append(Point(x: xPosition+20,
-                                       y: yPosition+50)) //B
-        rectangleVertices.append(Point(x: xPosition+50,
-                                       y: yPosition+20)) //C
-        rectangleVertices.append(Point(x: xPosition+30,
-                                       y: yPosition+0)) //D
-        
-        canvas.drawCustomShape(with: rectangleVertices)
-        
-        
-        
+        canvas.drawTiltedRectangle(xPosition: xPosition, yPosition: yPosition)
      }
 }
+
+//Draw one more tilted rectangle
+canvas.fillColor = .yellow
+canvas.drawTiltedRectangle(xPosition: 225, yPosition: 315)
 /*:
  ## Show the Live View
  Don't see any results?
