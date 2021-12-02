@@ -4,7 +4,7 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
+let preferredWidth = 400
 let preferredHeight = 600
 /*:
  ## Required code
@@ -41,11 +41,11 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+//canvas.translate(to: Point(x: canvas.width / 2,
+                          // y: canvas.height / 2))
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 /*:
  ## Add your code
@@ -56,22 +56,30 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
  */
 
-// Begin writing your code below (you can remove the examples shown)
+canvas.fillColor = .black
+canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+//Show a grid
+canvas.drawAxes(withScale: true, by: 50, color: .white)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+canvas.textColor = .white
 
-// Go back to origin
-p.goToOrigin()
 
-// Change the pen color
-p.penColor = .red
+//Text
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
+canvas.drawText(message: "the velvet underground", at: Point(x: 10, y: 410), size: 30, kerning: 0)
+canvas.drawText(message: "first appearance in london", at: Point(x: 25, y: 555), size: 8, kerning: 0)
+canvas.drawText(message: "at the london college of printing", at: Point(x: 25, y: 545), size: 8, kerning: 0)
+canvas.drawText(message: "with spring and pollyfloskin", at: Point(x: 160, y: 555), size: 8, kerning: 0)
+canvas.drawText(message: "plus the great western light show", at: Point(x: 160, y: 545), size: 8, kerning: 0)
+canvas.drawText(message: "thursday", at: Point(x: 310, y: 555), size: 8, kerning: 0)
+canvas.drawText(message: "october 14 1971 / 8pm", at: Point(x: 310, y: 545), size: 8, kerning: 0)
+
+//Draw lines
+canvas.lineColor = .white
+canvas.drawLine(from: Point(x: 0, y: 575), to: Point(x: 400, y: 575))
+canvas.drawLine(from: Point(x: 0, y: 455), to: Point(x: 400, y: 455))
+
 
 /*:
  ## Show the Live View

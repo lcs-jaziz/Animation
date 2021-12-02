@@ -70,7 +70,7 @@ for xPosition in stride(from: 0, through: 400, by: 44.44){
         
         //Find out Position for Triangles
         canvas.drawEllipse(at: Point(x: xPosition, y: yPosition ), width: 5, height: 5)
-        if xPosition - yPosition >= 187 {
+        if xPosition - yPosition >= -200 {
             canvas.fillColor = .yellow
         } else {
             canvas.fillColor = .white
