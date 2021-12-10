@@ -107,7 +107,7 @@ canvas.highPerformance = true
 for someValue in stride(from: 1.0, through: 600.0, by: 1.0) {
     
     someValue
-    let currentBrightness = map(value: someValue, fromLower: 1.0, fromUpper: 600.0, toLower: 35.27, toUpper: 82.75)
+    let currentBrightness = map(value: someValue, fromLower: 1.0, fromUpper: 600.0, toLower: 35.27, toUpper: 92.75)
     
     canvas.lineColor = Color(hue: 0.0, saturation: 0.0, brightness: Float(currentBrightness), alpha: 100.0)
     canvas.drawLine(from: Point(x: 0, y: someValue),
@@ -120,6 +120,14 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 //Color
 canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 87, alpha: 80)
+
+// Text
+canvas.textColor = .black
+canvas.drawText(message: "Fitz and the Tantrums", at: Point(x: 17, y: 550), size: 32, kerning: 2)
+canvas.drawText(message: "All the Feels Tour", at: Point(x: 170, y: 520), size: 16, kerning: 1)
+canvas.drawText(message: "Washington D.C.", at: Point(x: 170, y: 500), size: 16, kerning: 1)
+canvas.drawText(message: "Feb 14,2020", at: Point(x: 170, y: 480), size: 16, kerning: 1)
+
 //Custom design
 
 
@@ -141,20 +149,6 @@ for _ in 1...4 {
 
 
 
-
-//for verticalPosition in stride(from: 0, through: 400, by: 100) {
-    
-   // for horizontalPosition in stride(from:0, through: 400, by: 100){
-        
-    //    drawHeart()(Point(x: horizontalPosition, y: verticalPosition)
-   // }
-
-//}
-
-
-//for verticalPosition in stride(from: 0, through: 400, by: 100) {
-    
-//}
 
 
 
