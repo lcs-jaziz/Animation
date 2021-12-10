@@ -76,7 +76,7 @@ for xPosition in stride(from: 0, through: 400, by: 44.44){
             canvas.fillColor = .white
         }
         var triangleVertices: [Point] = []
-        triangleVertices.append(Point(x: xPosition, y: yPosition ))
+        triangleVertices.append(Point(x: xPosition + 0, y: yPosition + 0))
         triangleVertices.append(Point(x: xPosition + 44.44, y: yPosition + 0))
         triangleVertices.append(Point(x: xPosition + 44.44, y: yPosition + 44.44))
         canvas.drawCustomShape(with: triangleVertices)

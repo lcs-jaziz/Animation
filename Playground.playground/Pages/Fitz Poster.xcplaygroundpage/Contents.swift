@@ -44,8 +44,6 @@ PlaygroundPage.current.liveView = canvas
 //canvas.translate(to: Point(x: canvas.width / 2,
                            //y: canvas.height / 2))
 
-// Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 /*:
  ## Add your code
@@ -55,6 +53,54 @@ canvas.drawAxes(withScale: true, by: 50, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+
+func drawHeart() {
+    p.goto(dx: 48, dy: 5)
+    p.drawTo(dx: 12, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: -18, dy:0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: 26, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: -38, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: 48, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: -58, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: 68, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: -80, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: 88, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: -90, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    //Left Top part
+    p.drawTo(dx: 40, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: -35, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: 30, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: -25, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: 15, dy: 0)
+
+    //Right Top part
+    p.goto(dx: 66, dy: -24)
+    p.drawTo(dx: -40, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: 35, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: -30, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: 25, dy: 0)
+    p.drawTo(dx: 0, dy: 6)
+    p.drawTo(dx: -15, dy: 0)
+    
+    p.goToOrigin()
+}
 
 // Begin writing your code below (you can remove the examples shown)
 canvas.highPerformance = true
@@ -69,21 +115,28 @@ for someValue in stride(from: 1.0, through: 600.0, by: 1.0) {
 
     
 }
+// Show a grid
+canvas.drawAxes(withScale: true, by: 50, color: .black)
+
+//Color
+canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 87, alpha: 80)
+//Custom design
+
+
+        
+drawHeart()
+
+canvas.translate(to: Point(x: 100, y: 0))
+
+drawHeart()
+
+canvas.translate(to: Point(x: 100, y: 0))
+
+drawHeart()
+
+
+
+
+
+
 canvas.highPerformance = false
-
-
-/*:
- ## Show the Live View
- Don't see any results?
- 
- Remember to show the Live View (1 then 2):
- 
- ![timeline](timeline.png "Timeline")
-
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
