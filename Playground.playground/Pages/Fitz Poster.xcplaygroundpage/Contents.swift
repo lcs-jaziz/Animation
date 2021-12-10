@@ -123,17 +123,38 @@ canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 87, alpha: 80)
 //Custom design
 
 
+
+for _ in 1...4 {
+    for _ in 1...4 {
         
-drawHeart()
+        drawHeart()
 
-canvas.translate(to: Point(x: 100, y: 0))
+        canvas.translate(to: Point(x: 100, y: 0))
 
-drawHeart()
+    }
 
-canvas.translate(to: Point(x: 100, y: 0))
+    canvas.translate(to: Point(x: -400, y: 100))
 
-drawHeart()
+}
 
+
+
+
+
+
+//for verticalPosition in stride(from: 0, through: 400, by: 100) {
+    
+   // for horizontalPosition in stride(from:0, through: 400, by: 100){
+        
+    //    drawHeart()(Point(x: horizontalPosition, y: verticalPosition)
+   // }
+
+//}
+
+
+//for verticalPosition in stride(from: 0, through: 400, by: 100) {
+    
+//}
 
 
 

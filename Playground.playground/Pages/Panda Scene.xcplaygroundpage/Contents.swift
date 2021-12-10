@@ -89,7 +89,7 @@ canvas.lineColor = .black
 //Draw smile
 canvas.drawLine(from: Point(x: -10, y:-25), to: Point(x: 10, y: -25))
 canvas.drawCurve(from: Point(x: -10, y:-25),to:Point(x: 10, y: -25), control1:Point(x: -4, y: -35) , control2: Point (x: 4, y: -35))
-canvas.drawCurve(from: , to: <#T##Point#>, control1: <#T##Point#>, control2: <#T##Point#>)
+//canvas.drawCurve(from: , to: <#T##Point#>, control1: <#T##Point#>, control2: <#T##Point#>)
 /*:
  ## Show the Live View
  Don't see any results?
