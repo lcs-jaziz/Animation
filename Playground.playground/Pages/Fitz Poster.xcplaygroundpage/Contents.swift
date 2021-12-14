@@ -1,6 +1,6 @@
 //: [Previous](@previous) / [Next](@next)
 /*:
-## Canvas size
+ ## Canvas size
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
@@ -42,17 +42,20 @@ PlaygroundPage.current.liveView = canvas
 
 // Move the origin from the bottom-left corner of the canvas to it's centre point
 //canvas.translate(to: Point(x: canvas.width / 2,
-                           //y: canvas.height / 2))
+//y: canvas.height / 2))
 
 
 /*:
  ## Add your code
  
  Beginning on line 61, you can add your own code.
-  
+ 
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
+ 
  */
+canvas.highPerformance = true
+
+
 
 func drawHeart() {
     p.goto(dx: 48, dy: 5)
@@ -86,7 +89,7 @@ func drawHeart() {
     p.drawTo(dx: -25, dy: 0)
     p.drawTo(dx: 0, dy: 6)
     p.drawTo(dx: 15, dy: 0)
-
+    
     //Right Top part
     p.goto(dx: 66, dy: -24)
     p.drawTo(dx: -40, dy: 0)
@@ -102,8 +105,7 @@ func drawHeart() {
     p.goToOrigin()
 }
 
-// Begin writing your code below (you can remove the examples shown)
-canvas.highPerformance = true
+//Background
 for someValue in stride(from: 1.0, through: 600.0, by: 1.0) {
     
     someValue
@@ -112,43 +114,89 @@ for someValue in stride(from: 1.0, through: 600.0, by: 1.0) {
     canvas.lineColor = Color(hue: 0.0, saturation: 0.0, brightness: Float(currentBrightness), alpha: 100.0)
     canvas.drawLine(from: Point(x: 0, y: someValue),
                     to: Point(x: 400, y: someValue))
-
+    
     
 }
 // Show a grid
 canvas.drawAxes(withScale: true, by: 50, color: .black)
 
-//Color
-canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 87, alpha: 80)
+
 
 // Text
 canvas.textColor = .black
-canvas.drawText(message: "Fitz and the Tantrums", at: Point(x: 17, y: 550), size: 32, kerning: 2)
-canvas.drawText(message: "All the Feels Tour", at: Point(x: 170, y: 520), size: 16, kerning: 1)
-canvas.drawText(message: "Washington D.C.", at: Point(x: 170, y: 500), size: 16, kerning: 1)
-canvas.drawText(message: "Feb 14,2020", at: Point(x: 170, y: 480), size: 16, kerning: 1)
+canvas.drawText(message: "Fitz and the Tantrums", at: Point(x: 13, y: 515), size: 33, kerning: 2)
+canvas.drawText(message: "All the Feels Tour", at: Point(x: 235, y: 460), size: 14, kerning: 2)
+canvas.drawText(message: "Washington D.C.", at: Point(x: 235, y: 440), size: 14, kerning: 2)
+canvas.drawText(message: "Feb 14,2020", at: Point(x: 235, y: 420), size: 14, kerning: 2)
+
 
 //Custom design
 
 
 
-for _ in 1...4 {
-    for _ in 1...4 {
+for i in 1...4 {
+    for j in 1...4 {
+        
+        i
+        j
+        
+        //Color
+        //canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 87, alpha: 80)
+        //Print position
+        canvas.drawText(message: "\(i)\(j)", at: Point(x: 0, y: 0))
+       
+        
+        //Selection statements for Conditions
+        
+        if j == 1 {
+            canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 70, alpha: 80)
+        }
+        else  if j == 2 {
+            canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 80, alpha: 80)
+        }
+        else  if j == 3 {
+            canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 90, alpha: 80)
+        }
+        else  if j == 4 {
+            canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 100, alpha: 80)
+            
+        }
+        else if i >= 1 {
+            canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 70, alpha: 80)
+        }
         
         drawHeart()
-
         canvas.translate(to: Point(x: 100, y: 0))
-
+        
     }
-
+    
     canvas.translate(to: Point(x: -400, y: 100))
-
+   
 }
 
 
-
-
-
+//Conditions
+//for xPosition in stride (from: 0, through: 400, by: 100){
+//    for yPosition in stride(from: 0, through: 400, by: 100){
+//        canvas.fillColor = Color(hue: 333, saturation: 94, brightness: 87,alpha: 80)
+//
+//        if  yPosition >= 100{
+//            canvas.fillColor = Color(hue: 333, saturation: 60, brightness: 60, alpha: 80)
+//        } else if  yPosition + xPosition >= 100 {
+//
+//            canvas.fillColor = Color(hue: 333, saturation: 70, brightness: 70, alpha: 80)
+//        } else if yPosition + xPosition >= 200 {
+//
+//            canvas.fillColor = Color(hue: 333, saturation: 80, brightness: 80, alpha: 80)
+//        } else {
+//            yPosition + yPosition >= 300
+//            canvas.fillColor = Color(hue: 333, saturation: 90, brightness: 100, alpha: 80)
+//        }
+//
+//    }
+//
+//}
+//
 
 
 
