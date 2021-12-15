@@ -118,7 +118,7 @@ for someValue in stride(from: 1.0, through: 600.0, by: 1.0) {
     
 }
 // Show a grid
-canvas.drawAxes(withScale: true, by: 50, color: .black)
+//canvas.drawAxes(withScale: true, by: 50, color: .black)
 
 
 
@@ -140,11 +140,10 @@ for i in 1...4 {
         i
         j
         
-        //Color
-        //canvas.lineColor = Color(hue: 333, saturation: 94, brightness: 87, alpha: 80)
+        
         //Print position
-        canvas.drawText(message: "\(i)\(j)", at: Point(x: 0, y: 0))
-       
+        //canvas.drawText(message: "\(i)\(j)", at: Point(x: 0, y: 0))
+        
         
         //Selection statements for Conditions
         
@@ -171,32 +170,9 @@ for i in 1...4 {
     }
     
     canvas.translate(to: Point(x: -400, y: 100))
-   
+    
 }
 
-
-//Conditions
-//for xPosition in stride (from: 0, through: 400, by: 100){
-//    for yPosition in stride(from: 0, through: 400, by: 100){
-//        canvas.fillColor = Color(hue: 333, saturation: 94, brightness: 87,alpha: 80)
-//
-//        if  yPosition >= 100{
-//            canvas.fillColor = Color(hue: 333, saturation: 60, brightness: 60, alpha: 80)
-//        } else if  yPosition + xPosition >= 100 {
-//
-//            canvas.fillColor = Color(hue: 333, saturation: 70, brightness: 70, alpha: 80)
-//        } else if yPosition + xPosition >= 200 {
-//
-//            canvas.fillColor = Color(hue: 333, saturation: 80, brightness: 80, alpha: 80)
-//        } else {
-//            yPosition + yPosition >= 300
-//            canvas.fillColor = Color(hue: 333, saturation: 90, brightness: 100, alpha: 80)
-//        }
-//
-//    }
-//
-//}
-//
 
 
 
